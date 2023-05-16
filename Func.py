@@ -12,13 +12,15 @@ def leitorDePalavras():
     return palavra_secreta  # retorna a palavra selecionada em letras maiúsculas
 
 
+def acertadas(palavra):
+    return ["_" for letra in palavra]
 
 def resposta():
     chute = input("\nQUAL LETRA? ") #pede que o usuario digite uma letra
     chute = chute.strip().upper() #tratar o que o usuario digitou, removendo espaços e transformando em caixa alta
     return chute #retorna o valor que o usuário digitou
 
-def acerto(chute, letras_acertadas, palavra_secreta): #utiliza o valor das variaveis como argumento
+def acerto(chute, letras_acertadas, palavra_secreta):
     cont= 0 #inicializa um contador zerado
     for letra in palavra_secreta: #para cada letra na variavel de palavrasecreta
         if chute == letra: #compara se o chute/resposta é igual a letra contida na palavra
@@ -80,7 +82,7 @@ def mensagemPerdedor(palavraSecreta):
 ''')
     print("A palavra era {}".format(palavraSecreta))
 
-def desenha_forca(erros):
+def forca(erros):
     print("  _______     ")
     print(" |/      |    ")
 
